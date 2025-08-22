@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RentEase - Your one-stop shop for renting quality products">
+    <title>RentEase - Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" hr
+    ef="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --accent-color: #ffc107;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+        }
+        
+        /* Navigation */
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-color) !important;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .hero .btn {
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        
+        /* Section Headings */
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+        
+        /* Cards */
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .card-img-top {
+            object-fit: cover;
+            height: 250px;
+            transition: transform 0.5s ease;
+        }
+        
+        .card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .card-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        /* Featured Sections */
+        .featured .card-img {
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .card-img-overlay .overlay-content {
+            background: rgba(0,0,0,0.6);
+            border-radius: 0 0 10px 10px;
+            padding: 1.5rem;
+            width: 100%;
+        }
+        
+        /* Tabs */
+        .nav-tabs .nav-link {
+            color: var(--secondary-color);
+            font-weight: 600;
+            border: none;
+            padding: 0.75rem 1.5rem;
+        }
+        
+        .nav-tabs .nav-link.active {
+            color: var(--primary-color);
+            background: transparent;
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        /* Buttons */
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-warning {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        footer h5 {
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        footer h5:after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            margin-top: 0.5rem;
+        }
+        
+        footer a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .card-img-top {
+                height: 200px;
+            }
+            
+            .featured .card-img {
+                height: 300px;
+                margin-bottom: 1rem;
+            }
+            
+            .section-title {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">RentEase</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Electronics</a></li>
+                            <li><a class="dropdown-item" href="#">Furniture</a></li>
+                            <li><a class="dropdown-item" href="#">Tools</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">All Categories</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <form class="d-flex me-3" role="search">
+                        <div class="input-group">
+                            <input class="form-control" type="search" placeholder="Search products..." aria-label="Search">
+                            <button class="btn btn-outline-primary" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="d-flex">
+                        <a href="#" class="btn btn-sm btn-outline-secondary position-relative me-2">
+                            <i class="fas fa-heart"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
+                        </a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary position-relative me-3">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                        </a>
+                        {% if user.is_authenticated %}
+                        <span class="me-2 text-success">👋 {{ user.username }}</span>
+                        <form action="/logout_view/" method="post" class="d-inline">
+                            {% csrf_token %}
+                            <button class="btn btn-outline-danger btn-sm" type="submit">Logout</button>
+                        </form>
+                        {% else %}
+                        <a href="/register/" class="btn btn-primary btn-sm">Log in</a>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2 class="display-4 fw-bold">Find Perfect Items to Rent</h2>
+            <p class="lead mb-4">Quality products for your home, events, and projects at affordable prices</p>
+            <a href="#" class="btn btn-warning btn-lg px-4">Browse Rentals</a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories py-5">
+        <div class="container">
+            <h3 class="section-title">Shop by Categories</h3>
+            <div class="row g-4">
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="static/media/camera title.jpeg" class="card-img-top" alt="Cameras">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Cameras & Photography</h5>
+                            <p class="card-text text-muted">Professional gear for your next shoot</p>
+                            <a href="#" class="btn btn-outline-primary mt-2">Browse Cameras</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="static/media/laptop title.jpeg" class="card-img-top" alt="Laptops">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Laptops & Tech</h5>
+                            <p class="card-text text-muted">Powerful devices for work and play</p>
+                            <a href="#" class="btn btn-outline-primary mt-2">Browse Laptops</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100">
+                        <img src="data:image/jpeg;base64,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" class="card-img-top" alt="Musical Instruments">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Musical Instruments</h5>
+                            <p class="card-text text-muted">Create music without the commitment</p>
+                            <a href="#" class="btn btn-outline-primary mt-2">Browse Instruments</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Sections -->
+    <section class="featured py-5 bg-light">
+        <div class="container">
+            <h3 class="section-title">Featured Collections</h3>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card text-white h-100">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-img" alt="Living Room Furniture">
+                        <div class="card-img-overlay d-flex align-items-end p-0">
+                            <div class="overlay-content">
+                                <h3 class="card-title">Living Room Essentials</h3>
+                                <p class="card-text">Comfortable and stylish furniture for your home</p>
+                                <a href="#" class="btn btn-warning">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card text-white h-100">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-img" alt="Dining Room Furniture">
+                        <div class="card-img-overlay d-flex align-items-end p-0">
+                            <div class="overlay-content">
+                                <h3 class="card-title">Dining & Entertaining</h3>
+                                <p class="card-text">Everything you need for the perfect dinner party</p>
+                                <a href="#" class="btn btn-warning">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hot Products Section -->
+    <section class="hot-products py-5">
+        <div class="container">
+            <h3 class="section-title">Popular Rentals</h3>
+            <ul class="nav nav-tabs justify-content-center mb-4" id="productsTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="latest-tab" data-bs-toggle="tab" data-bs-target="#latest" type="button" role="tab" aria-controls="latest" aria-selected="true">New Arrivals</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="toprated-tab" data-bs-toggle="tab" data-bs-target="#top-rated" type="button" role="tab" aria-controls="top-rated" aria-selected="false">Top Rated</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="bestsellers-tab" data-bs-toggle="tab" data-bs-target="#best-sellers" type="button" role="tab" aria-controls="best-sellers" aria-selected="false">Best Sellers</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="productsTabContent">
+                <div class="tab-pane fade show active" id="latest" role="tabpanel" aria-labelledby="latest-tab">
+                    <div class="row g-4">
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card h-100">
+                                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80" class="card-img-top" alt="MacBook Pro">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <h5 class="card-title mb-0">MacBook Pro 16"</h5>
+                                        <span class="badge bg-success">New</span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <small class="text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <span class="text-muted ms-1">4.5 (24)</span>
+                                        </small>
+                                    </div>
+                                    <p class="card-text text-muted mb-3">Latest model with M2 Pro chip, 32GB RAM, 1TB SSD</p>
+                                    <p class="text-primary fw-bold h5 mb-3">$89/day</p>
+                                    <div class="d-flex justify-content-between">
+                                        <a href="#" class="btn btn-outline-primary btn-sm">
+                                            <i class="fas fa-heart me-1"></i> Save
+                                        </a>
+                                        <a href="#" class="btn btn-primary btn-sm">
+                                            <i class="fas fa-shopping-cart me-1"></i> Rent Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card h-100">
+                                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" class="card-img-top" alt="Canon Camera">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <h5 class="card-title mb-0">Canon EOS R5</h5>
+                                        <span class="badge bg-success">New</span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <small class="text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <span class="text-muted ms-1">4.0 (18)</span>
+                                        </small>
+                                    </div>
+                                    <p class="card-text text-muted mb-3">45MP full-frame mirrorless camera with 8K video</p>
+                                    <p class="text-primary fw-bold h5 mb-3">$129/day</p>
+                                    <div class="d-flex justify-content-between">
+                                        <a href="#" class="btn btn-outline-primary btn-sm">
+                                            <i class="fas fa-heart me-1"></i> Save
+                                        </a>
+                                        <a href="#" class="btn btn-primary btn-sm">
+                                            <i class="fas fa-shopping-cart me-1"></i> Rent Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card h-100">
+                                <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="DJ Equipment">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-2">Pioneer DJ Setup</h5>
+                                    <div class="mb-3">
+                                        <small class="text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="text-muted ms-1">5.0 (32)</span>
+                                        </small>
+                                    </div>
+                                    <p class="card-text text-muted mb-3">Complete DJ setup with mixer, turntables, and speakers</p>
+                                    <p class="text-primary fw-bold h5 mb-3">$199/day</p>
+                                    <div class="d-flex justify-content-between">
+                                        <a href="#" class="btn btn-outline-primary btn-sm">
+                                            <i class="fas fa-heart me-1"></i> Save
+                                        </a>
+                                        <a href="#" class="btn btn-primary btn-sm">
+                                            <i class="fas fa-shopping-cart me-1"></i> Rent Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card h-100">
+                                <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" class="card-img-top" alt="Projector">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-2">4K Home Theater Projector</h5>
+                                    <div class="mb-3">
+                                        <small class="text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <span class="text-muted ms-1">4.7 (41)</span>
+                                        </small>
+                                    </div>
+                                    <p class="card-text text-muted mb-3">3000 lumen 4K projector with 120" screen</p>
+                                    <p class="text-primary fw-bold h5 mb-3">$59/day</p>
+                                    <div class="d-flex justify-content-between">
+                                        <a href="#" class="btn btn-outline-primary btn-sm">
+                                            <i class="fas fa-heart me-1"></i> Save
+                                        </a>
+                                        <a href="#" class="btn btn-primary btn-sm">
+                                            <i class="fas fa-shopping-cart me-1"></i> Rent Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-5">
+                        <a href="#" class="btn btn-outline-primary px-4">View All New Arrivals</a>
+                    </div>
+                </div>
+                
+                <!-- Other tab panes would go here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials py-5 bg-light">
+        <div class="container">
+            <h3 class="section-title">What Our Customers Say</h3>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" class="rounded-circle mb-3" width="80" alt="Customer">
+                                <h5 class="card-title">Sarah Johnson</h5>
+                                <div class="text-warning mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="card-text">"Renting camera equipment from RentEase saved our production so much money. The process was seamless and the gear was in perfect condition."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" class="rounded-circle mb-3" width="80" alt="Customer">
+                                <h5 class="card-title">Michael Chen</h5>
+                                <div class="text-warning mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                            <p class="card-text">"I needed a high-end laptop for a short-term project. RentEase had exactly what I needed at a fraction of the purchase price. Will use again!"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle mb-3" width="80" alt="Customer">
+                                <h5 class="card-title">Emily Rodriguez</h5>
+                                <div class="text-warning mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="card-text">"The furniture rental for our event was perfect. Delivery was on time and setup was a breeze. Highly recommend RentEase for any temporary needs."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4">Ready to Rent Something Amazing?</h2>
+            <p class="lead mb-5">Join thousands of satisfied customers who save money by renting instead of buying.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#" class="btn btn-light btn-lg px-4">Browse Rentals</a>
+                <a href="#" class="btn btn-outline-light btn-lg px-4">How It Works</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>RentEase</h5>
+                    <p class="text-muted">Your one-stop shop for renting quality products for home, work, and play.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted">Home</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">Shop</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">Categories</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">About Us</a></li>
+                        <li><a href="#" class="text-muted">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Categories</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted">Electronics</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">Furniture</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">Tools</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">Event Gear</a></li>
+                        <li><a href="#" class="text-muted">All Categories</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>Newsletter</h5>
+                    <p class="text-muted">Subscribe to get updates on new products and special offers.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your email" aria-label="Your email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="small text-muted mb-0">We'll never share your email with anyone else.</p>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small text-muted mb-0">&copy; 2023 RentEase. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline small mb-0">
+                        <li class="list-inline-item"><a href="#" class="text-muted">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-muted">Terms of Service</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-muted">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
